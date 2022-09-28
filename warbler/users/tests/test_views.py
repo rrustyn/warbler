@@ -3,9 +3,9 @@
 from unittest import TestCase
 from bs4 import BeautifulSoup
 
-from warbler import app, CURR_USER_KEY
+from warbler import app
 from warbler.database import db
-from warbler.config import DATABASE_URL_TEST
+from warbler.config import DATABASE_URL_TEST, CURR_USER_KEY
 from warbler.messages.models import Message
 from warbler.users.models import User
 from warbler.follows.models import Follows
@@ -15,7 +15,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL_TEST
 app.config["TESTING"] = True
 app.config["SQLALCHEMY_ECHO"] = False
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
+app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 
 # Create our tables (we do this here, so we only create the tables
 # once for all tests --- in each test, we'll delete the data

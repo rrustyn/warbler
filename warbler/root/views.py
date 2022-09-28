@@ -4,8 +4,7 @@ from warbler.users.models import User
 from warbler.messages.models import Message
 from warbler.root.forms import UserAddForm, LoginForm
 from warbler.database import db
-
-CURR_USER_KEY = "curr_user"
+from warbler.config import CURR_USER_KEY
 
 root_blueprint = Blueprint(
     'root',

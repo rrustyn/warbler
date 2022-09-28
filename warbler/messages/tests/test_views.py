@@ -1,9 +1,9 @@
 """Message View tests."""
 
 from unittest import TestCase
-from warbler import app, CURR_USER_KEY
+from warbler import app
 from warbler.database import db
-from warbler.config import DATABASE_URL_TEST
+from warbler.config import DATABASE_URL_TEST, CURR_USER_KEY
 from warbler.messages.models import Message
 from warbler.users.models import User
 

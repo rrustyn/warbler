@@ -1,7 +1,7 @@
 from flask import Flask, g, session, render_template
 import os
 
-from warbler.config import DATABASE_URL
+from warbler.config import DATABASE_URL, CURR_USER_KEY
 from warbler.database import connect_db
 
 from warbler.root.views import root_blueprint
@@ -19,8 +19,6 @@ app.config['SQLALCHEMY_ECHO'] = True
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 connect_db(app)
-
-CURR_USER_KEY = "curr_user"
 
 @app.before_request
 def add_user_to_g():
